@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Apex Heritage Cooperative Society</title>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F5F8FA;--surface:#fff;--ink:#14243A;--muted:#4A5B70;--line:#CFD9E3;--brand:#14304A;--brand-ink:#fff;--accent:#E0A030;--accent-ink:#14243A;--soft:#E6EEF4;--on-brand:#D5E0EA;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E1A28;--surface:#16263A;--ink:#EAF0F6;--muted:#A9B8C9;--line:#2B3F57;--brand:#0A1420;--soft:#1B2E45;--accent:#F0B646;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0E1A28;--surface:#16263A;--ink:#EAF0F6;--muted:#A9B8C9;--line:#2B3F57;--brand:#0A1420;--soft:#1B2E45;--accent:#F0B646;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.6 "Atkinson Hyperlegible",system-ui,-apple-system,"Segoe UI",sans-serif}
+h1,h2,h3{font-family:"Source Serif 4",Georgia,"Times New Roman",serif;line-height:1.15;margin:0 0 .5em}
+h1{font-size:clamp(2.1rem,7vw,3.5rem);letter-spacing:-.01em}
+h2{font-size:clamp(1.6rem,4.5vw,2.3rem)}
+h3{font-size:1.25rem}
+p{margin:0 0 1em;max-width:64ch}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+section{padding:52px 0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.btn{display:inline-block;font:inherit;font-weight:700;background:var(--accent);color:var(--accent-ink);border:0;border-radius:10px;padding:13px 22px;min-height:48px;cursor:pointer;text-decoration:none}
+.btn:hover{filter:brightness(1.06)}
+header,.hero,.cta{background:var(--brand);color:var(--brand-ink)}
+header .bar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 0}
+.brand{font-family:"Source Serif 4",Georgia,serif;font-weight:700;font-size:1.05rem;line-height:1.2}
+@media(min-width:600px){.brand{font-size:1.35rem}}
+.hero{padding:20px 0 60px}
+.hero h1,.cta h2{color:var(--brand-ink)}
+.hero p,.cta p{font-size:1.15rem;color:var(--on-brand)}
+.tiles{display:grid;gap:14px;margin-top:26px}
+@media(min-width:800px){.tiles{grid-template-columns:repeat(3,1fr)}}
+.tile{display:block;text-decoration:none;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25);border-radius:14px;padding:20px}
+.tile:hover{background:rgba(255,255,255,.14)}
+.tile h3{color:#fff;margin-bottom:.3em}
+.tile p{margin:0;font-size:1rem;color:var(--on-brand)}
+.tile small{display:block;margin-top:10px;color:var(--accent);font-weight:700}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px}
+.seg{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.seg button{flex:1 1 220px;font:inherit;font-weight:700;padding:12px;min-height:52px;border-radius:10px;border:2px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
+dl.facts{margin:0;display:grid;gap:0}
+dl.facts div{padding:12px 0;border-top:1px solid var(--line)}
+dl.facts div:first-child{border-top:0}
+dl.facts dt{font-weight:700}
+dl.facts dd{margin:2px 0 0;color:var(--muted)}
+@media(min-width:700px){dl.facts div{display:grid;grid-template-columns:220px 1fr;gap:16px}dl.facts dd{margin:0}}
+.hidden{display:none!important}
+.est{margin-top:22px;background:var(--soft);border-radius:12px;padding:22px}
+.est h3{margin-bottom:.2em}
+.est label{display:block;font-weight:700;margin:14px 0 4px}
+.est .v{float:right}
+.est input[type=range]{width:100%;height:36px;accent-color:var(--brand)}
+@media (prefers-color-scheme:dark){.est input[type=range]{accent-color:var(--accent)}}
+.out{font-family:"Source Serif 4",Georgia,serif;font-weight:700;font-size:clamp(1.8rem,6vw,2.6rem);line-height:1.1;margin:14px 0 4px}
+.note{font-size:.93rem;color:var(--muted);margin:10px 0 0}
+.two{display:grid;gap:14px}
+@media(min-width:760px){.two{grid-template-columns:1fr 1fr}}
+.tier{border-left:6px solid var(--accent)}
+.tier h3{margin-bottom:.3em}
+.tier ul,.card ul{margin:.4em 0 0;padding-left:1.2em}
+.tier li,.card li{margin:.2em 0}
+details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:0 18px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:700;padding:16px 0;min-height:48px}
+details p{color:var(--muted)}
+.cta{text-align:center}
+.cta p{margin-inline:auto}
+footer{padding:26px 0 40px;font-size:.92rem;color:var(--muted)}
+footer p{max-width:85ch}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap bar"><span class="brand">Apex Heritage Cooperative Society</span><a class="btn" href="mailto:Apexheritage01@gmail.com?subject=Joining%20Apex%20Heritage">Email us</a></div></header>
+
+<section class="hero"><div class="wrap">
+<h1>Save together. Grow together. Retire with confidence.</h1>
+<p>Apex Heritage is a cooperative society with plans for every stage of life: steady yearly income, a savings plan for young professionals, and a long-term fund for your retirement.</p>
+<div class="tiles">
+<a class="tile" href="#plans" data-go="0"><h3>Short-Term Income Plan</h3><p>Contribute monthly, earn yearly distributions, and borrow when you need to.</p><small>See details</small></a>
+<a class="tile" href="#plans" data-go="1"><h3>Young Professional Growth Cooperative</h3><p>A savings plan. Save $200 to $1,000, monthly or yearly.</p><small>See details</small></a>
+<a class="tile" href="#plans" data-go="2"><h3>Golden Years Legacies Fund</h3><p>Long-term growth that becomes a monthly pension.</p><small>See details</small></a>
+</div>
+</div></section>
+
+<section id="plans"><div class="wrap">
+<h2>Choose your plan</h2>
+<div class="card">
+<div class="seg" role="group" aria-label="Plans">
+<button type="button" aria-pressed="true">Short-Term Income</button>
+<button type="button" aria-pressed="false">Young Professional</button>
+<button type="button" aria-pressed="false">Golden Years Legacies</button>
+</div>
+
+<div class="panel">
+<p>Your money is placed in liquid, lower-risk assets such as money market instruments, so you earn steady returns and can collect them every year. Your money is yours to invest, save, or borrow against. Capital is pooled to give loans to members, and the interest raises the value of the pool for everyone.</p>
+<dl class="facts">
+<div><dt>Contributions</dt><dd>$200 to $500, monthly</dd></div>
+<div><dt>Accumulation period</dt><dd>1 to 2 years</dd></div>
+<div><dt>Where it is invested</dt><dd>Liquid money market instruments</dd></div>
+<div><dt>Return</dt><dd>Fixed annual rate of 10% to 20%</dd></div>
+<div><dt>Distributions</dt><dd>Yearly</dd></div>
+<div><dt>Withdrawals</dt><dd>Available after the accumulation period</dd></div>
+<div><dt>Loan eligibility</dt><dd>After 6 months of contributions</dd></div>
+<div><dt>Loan limit</dt><dd>2 to 3 times your total savings</dd></div>
+<div><dt>Repayment</dt><dd>12 to 24 months at 5% interest</dd></div>
+<div><dt>Approval</dt><dd>Based on how much you have saved, which protects the pool against default</dd></div>
+<div><dt>Payout</dt><dd>Loan funds are paid out once approved</dd></div>
+<div><dt>Verification</dt><dd>BVN and national ID are required</dd></div>
+</dl>
+</div>
+
+<div class="panel hidden">
+<p>A savings plan for young professionals. Save monthly or yearly toward startup capital or to buy assets. You can also take a loan whenever you need one.</p>
+<dl class="facts">
+<div><dt>Contributions</dt><dd>$200 to $1,000, monthly or yearly</dd></div>
+<div><dt>Purpose</dt><dd>Save for startup capital or to buy assets</dd></div>
+<div><dt>Buying assets</dt><dd>After a set amount is paid in, members can buy property or company shares</dd></div>
+<div><dt>Loans</dt><dd>Members are allowed to take a loan</dd></div>
+<div><dt>Verification</dt><dd>BVN and national ID are required</dd></div>
+</dl>
+</div>
+
+<div class="panel hidden">
+<p>Focused on long-term capital growth and keeping your wealth safe. You contribute regularly, and at retirement the fund pays you a steady pension.</p>
+<dl class="facts">
+<div><dt>Contributions</dt><dd>From $500, with no upper limit. You decide based on your income.</dd></div>
+<div><dt>Duration</dt><dd>10 to 30 years until retirement. You choose the date.</dd></div>
+<div><dt>Where it is invested</dt><dd>Dividend-paying stocks and real estate</dd></div>
+<div><dt>Fractional units</dt><dd>Buy units in real estate funds, monthly or yearly</dd></div>
+<div><dt>Rental income</dt><dd>Paid out as dividends after the build-up period, from 2 years or more</dd></div>
+<div><dt>At retirement</dt><dd>Monthly pension allowance</dd></div>
+<div><dt>Withdrawals</dt><dd>Locked until your chosen date. Early access needs approval from headquarters and is only for serious situations.</dd></div>
+<div><dt>Loans</dt><dd>Allowed, as with any fund</dd></div>
+</dl>
+</div>
+
+<div class="est" id="est0">
+<h3>Estimate your yearly distribution</h3>
+<label for="a1"><span>Monthly contribution</span><span class="v" id="a1v"></span></label>
+<input type="range" id="a1" min="200" max="500" step="50" value="300">
+<label for="a2"><span>Accumulation period</span><span class="v" id="a2v"></span></label>
+<input type="range" id="a2" min="12" max="24" step="1" value="12">
+<label for="a3"><span>Annual rate</span><span class="v" id="a3v"></span></label>
+<input type="range" id="a3" min="10" max="20" step="1" value="10">
+<div class="out" id="o0"></div><div id="o0s"></div>
+<p class="note">Illustration only. Your actual rate is confirmed when you join.</p>
+</div>
+
+<div class="est" id="est1">
+<h3>Estimate your loan</h3>
+<label for="b1"><span>Your total savings</span><span class="v" id="b1v"></span></label>
+<input type="range" id="b1" min="200" max="10000" step="100" value="1200">
+<label for="b2"><span>Repayment term</span><span class="v" id="b2v"></span></label>
+<input type="range" id="b2" min="12" max="24" step="12" value="12">
+<div class="out" id="o1"></div><div id="o1s"></div>
+<p class="note">Illustration only. Assumes 5% simple interest on the loan. Final limits are set at approval.</p>
+</div>
+</div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+<h2>Simple, tiered verification</h2>
+<p>Start with the basics. Provide more identification as you move up to larger amounts.</p>
+<div class="two">
+<div class="card tier"><h3>Tier 1</h3><ul><li>Phone number</li><li>BVN</li><li>National ID card</li><li>House address</li><li>Deposit of $200 to $400</li></ul></div>
+<div class="card tier"><h3>Higher tiers</h3><p style="margin:0">Larger amounts and larger loans need more identification. For a bigger loan, a referral is also needed after a successful investment. You receive a reward of $50 to $100, depending on the number of referrals.</p></div>
+</div>
+<div class="card tier" style="margin-top:14px"><h3>Applying for a loan (Tier 1)</h3><ul><li>House address</li><li>BVN</li><li>Bank details</li><li>National ID card</li></ul></div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+<h2>Rules that protect every member</h2>
+<div class="two">
+<div class="card"><h3>Breach of contract</h3><p style="margin:0">10% or 30% of your accumulated capital is deducted, depending on the amount you have built up.</p></div>
+<div class="card"><h3>Loan default</h3><p style="margin:0">Your cards are frozen and your investments are restricted.</p></div>
+</div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+<h2>Questions</h2>
+<details><summary>Why can’t I withdraw early?</summary><p>The long-term plan is a strict savings plan. You choose how many years your money stays invested, and it is locked until then. If a serious situation comes up, speak to headquarters, who can approve early access.</p></details>
+<details><summary>How is my loan limit decided?</summary><p>The limit depends on your savings. After 6 months of contributions you can borrow 2 to 3 times what you have saved. This keeps the pool protected against default.</p></details>
+<details><summary>How does the pool grow?</summary><p>Members contribute regularly, and loans to members earn interest. That interest stays in the pool and raises its value for everyone.</p></details>
+<details><summary>How do referral rewards work?</summary><p>After a successful investment you can refer someone to qualify for a higher loan, and you receive a reward of $50 to $100, depending on the number of referrals.</p></details>
+</div></section>
+
+<section class="cta"><div class="wrap">
+<h2>Ready to join?</h2>
+<p>Send us a message and we will guide you through your first deposit and verification.</p>
+<a class="btn" href="mailto:Apexheritage01@gmail.com?subject=Joining%20Apex%20Heritage">Apexheritage01@gmail.com</a>
+</div></section>
+
+<footer><div class="wrap"><p>Apex Heritage Fund. Innovated to change the world at large by creating a new system.</p></div></footer>
+
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var f=new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0});
+var btns=document.querySelectorAll('.seg button'),panels=document.querySelectorAll('.panel');
+function show(n){
+btns.forEach(function(b,i){b.setAttribute('aria-pressed',i===n)});
+panels.forEach(function(p,i){p.classList.toggle('hidden',i!==n)});
+$('est0').classList.toggle('hidden',n!==0);
+$('est1').classList.toggle('hidden',n!==0);
+}
+btns.forEach(function(b,i){b.onclick=function(){show(i)}});
+document.querySelectorAll('[data-go]').forEach(function(a){a.addEventListener('click',function(){show(+a.getAttribute('data-go'))})});
+function c0(){
+var m=+$('a1').value,n=+$('a2').value,r=+$('a3').value/100,t=m*n;
+$('a1v').textContent=f.format(m);$('a2v').textContent=n+' months';$('a3v').textContent=(r*100)+'%';
+$('o0').textContent=f.format(t*r)+' per year';
+$('o0s').textContent='After saving '+f.format(t)+' over '+n+' months.';
+}
+function c1(){
+var s=+$('b1').value,t=+$('b2').value;
+$('b1v').textContent=f.format(s);$('b2v').textContent=t+' months';
+$('o1').textContent=f.format(s*2)+' to '+f.format(s*3);
+var L=s*3;
+$('o1s').textContent='Largest loan repaid at about '+f.format(L*1.05/t)+' a month over '+t+' months.';
+}
+['a1','a2','a3'].forEach(function(k){$(k).addEventListener('input',c0)});
+['b1','b2'].forEach(function(k){$(k).addEventListener('input',c1)});
+c0();c1();
+})();
+</script>
+</body>
+</html>
